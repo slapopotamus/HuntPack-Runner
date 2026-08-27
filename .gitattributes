@@ -1,0 +1,10 @@
+# Normalize text files to LF in the repository.
+* text=auto
+
+# Windows batch files must keep CRLF in the working tree — cmd.exe can
+# mis-parse LF-only `for (...)` blocks and `goto :label` jumps.
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Keep shell scripts LF regardless of platform.
+*.sh text eol=lf

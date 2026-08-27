@@ -1,0 +1,8 @@
+# Development / CI dependencies (not required to run the tool).
+#   pytest      — unit tests
+#   pip-audit   — dependency vulnerability scan
+#   pip-tools   — pin/lock requirements (pip-compile --generate-hashes)
+-r requirements.txt
+pytest>=8.0
+pip-audit>=2.7
+pip-tools>=7.4

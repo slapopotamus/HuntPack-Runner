@@ -1,0 +1,18 @@
+# Non-secret runtime configuration. Secrets (API keys) live in .env.
+# CLI flags override these; these override the built-in defaults.
+
+# Falcon cloud region: us-1, us-2, eu-1, us-gov-1, us-gov-2
+region: us-1
+
+# NG-SIEM / LogScale repository to search.
+#   search-all       -> spans every repository (good default)
+#   investigate_view -> the Advanced Event Search view
+# FortiGate-log hunts (Q1-Q4) and Falcon EDR hunts (Q5-Q7) both work under
+# search-all. Narrow this if you know the specific repo your data lands in.
+repository: search-all
+
+search:
+  start: "7d"       # LogScale relative lookback: 60m, 24h, 7d, 30d ...
+  end: "now"
+  poll_interval_seconds: 2
+  timeout_seconds: 300
